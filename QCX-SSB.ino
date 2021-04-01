@@ -7,16 +7,16 @@
 #define VERSION   "1.02p"
 
 // Configuration switches; remove/add a double-slash at line-start to enable/disable a feature; to save space disable e.g. CAT, DIAG, KEYER
-#define DIAG            1   // Hardware diagnostics on startup (only disable when your rig is working)
-#define KEYER           1   // CW keyer
+//#define DIAG            1   // Hardware diagnostics on startup (only disable when your rig is working)
+//#define KEYER           1   // CW keyer
 #define CAT             1   // CAT-interface
-#define F_XTAL 27005000     // 27MHz SI5351 crystal
-//#define F_XTAL 25004000   // 25MHz SI5351 crystal  (enable for WB2CBA-uSDX or SI5351 break-out board)
+//#define F_XTAL 27005000     // 27MHz SI5351 crystal
+#define F_XTAL 24999984   // 25MHz SI5351 crystal  (enable for WB2CBA-uSDX or SI5351 break-out board)
 //#define F_XTAL 25000000   // 25MHz SI5351 crystal  (enable for 25MHz TCXO)
-//#define SWAP_ROTARY   1   // Swap rotary direction (enable for WB2CBA-uSDX)
+#define SWAP_ROTARY   1   // Swap rotary direction (enable for WB2CBA-uSDX)
 //#define QCX           1   // Supports older (non-SDR) QCX HW modifications (QCX, QCX-SSB, QCX-DSP with I/Q alignment-feature)
 //#define OLED          1   // OLED display, connect SDA (PD2), SCL (PD3)
-#define LPF_SWITCHING_DL2MAN_USDX_REV3         1   // Enable 8-band filter bank switching: latching relays wired to a TCA/PCA9555 GPIO extender on the PC4/PC5 I2C bus; relays are using IO0.0 as common (ground), IO1.0..7 used by the individual latches K0-7 switching respectively LPFs for 10m, 15m, 17m, 20m, 30m, 40m, 60m, 80m
+//#define LPF_SWITCHING_DL2MAN_USDX_REV3         1   // Enable 8-band filter bank switching: latching relays wired to a TCA/PCA9555 GPIO extender on the PC4/PC5 I2C bus; relays are using IO0.0 as common (ground), IO1.0..7 used by the individual latches K0-7 switching respectively LPFs for 10m, 15m, 17m, 20m, 30m, 40m, 60m, 80m
 //#define LPF_SWITCHING_DL2MAN_USDX_REV2       1   // Enable 5-band filter bank switching: latching relays wired to a TCA/PCA9555 GPIO extender on the PC4/PC5 I2C bus; relays are using IO0.1 as common (ground), IO0.3, IO0.5, IO0.7, IO1.1, IO1.3 used by the individual latches K1-5 switching respectively LPFs for 20m, 30m, 40m, 60m, 80m
 //#define LPF_SWITCHING_DL2MAN_USDX_REV2_BETA  1   // Enable 5-band filter bank switching: latching relays wired to a PCA9539PW   GPIO extender on the PC4/PC5 I2C bus; relays are using IO0.1 as common (ground), IO0.3, IO0.5, IO0.7, IO1.1, IO1.3 used by the individual latches K1-5 switching respectively LPFs for 20m, 30m, 40m, 60m, 80m
 //#define LPF_SWITCHING_DL2MAN_USDX_REV1       1   // Enable 3-band filter bank switching: latching relays wired to a PCA9536D    GPIO extender on the PC4/PC5 I2C bus; relays are using IO0 as common (ground), IO1-IO3 used by the individual latches K1-3 switching respectively LPFs for 20m, 40m, 80m
@@ -24,14 +24,14 @@
 // Advanced configuration switches
 //#define CAT_EXT       1   // Extended CAT support: remote button and screen control commands over CAT
 //#define CAT_STREAMING 1   // Extended CAT support: audio streaming over CAT, once enabled and triggered with CAT cmd, 7.812ksps 8-bit unsigned audio is sent over UART. The ";" is omited in the data-stream, and only sent to indicate the beginning and end of a CAT cmd.
-#define CW_DECODER      1   // CW decoder
+//#define CW_DECODER      1   // CW decoder
 //#define CW_MESSAGE    1   // Transmits pre-defined CW messages on-demand (double-click left button)
 #define TX_ENABLE       1   // Disable this for RX only (no transmit), e.g. to support uSDX for kids idea: https://groups.io/g/ucx/topic/81030243#6276
-#define TX_DELAY        1   // Enables a delay in the actual transmission to allow relay-switching to be completed before the power is applied
+//#define TX_DELAY        1   // Enables a delay in the actual transmission to allow relay-switching to be completed before the power is applied
 #define KEY_CLICK       1   // Reduce key clicks by envelope shaping
 #define SEMI_QSK        1   // Just after keying the transmitter, keeps the RX muted for a short amount of time in the anticipation for continued keying
 #define RIT_ENABLE      1   // Receive-In-Transit alternates the receiving frequency with an user-defined offset to compensate for any necessary tuning needed on receive
-#define VOX_ENABLE      1   // Voice-On-Xmit which is switching the transceiver into transmit as soon audio is detected (above noise gate level)
+//#define VOX_ENABLE      1   // Voice-On-Xmit which is switching the transceiver into transmit as soon audio is detected (above noise gate level)
 //#define MOX_ENABLE    1   // Monitor-On-Xmit which is audio monitoring on speaker during transmit
 #define FAST_AGC        1   // Adds fast AGC option (good for CW)
 //#define VSS_METER     1   // Supports Vss measurement (as s-meter option)
@@ -42,7 +42,7 @@
 //#define TESTBENCH     1   // Tests RX chain by injection of sine wave, measurements results are sent over serial
 //#define CW_FREQS_QRP  1   // Defaults to CW QRP   frequencies when changing bands
 //#define CW_FREQS_FISTS  1 // Defaults to CW FISTS frequencies when changing bands
-#define MYCALL          ""  // Enter your call (in caps)
+#define MYCALL          "KC3PVP"  // Enter your call (in caps)
 
 // QCX pin defintions
 #define LCD_D4  0         //PD0    (pin 2)
